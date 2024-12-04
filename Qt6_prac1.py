@@ -11,7 +11,7 @@ class MainWindow(QWidget):
         # 建立標籤與按鈕
         self.label = QLabel("Start！", self)
         self.button_cnt = QPushButton("Click here", self)
-        self.button_rst = QPushButton("reset", self)
+        self.button_rst = QPushButton("Reset", self)
 
         # 計數變數
         self.counter = 0

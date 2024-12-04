@@ -7,16 +7,16 @@ import sys
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("PyQt6 輸入與互動")
+        self.setWindowTitle("Text Interaction")
         self.resize(400, 300)
 
         # 元件：標籤、輸入框、按鈕
-        self.label = QLabel("請輸入文字並點擊按鈕：", self)
+        self.label = QLabel("Type Text:", self)
         self.input_field = QLineEdit(self)
-        self.input_field.setPlaceholderText("在這裡輸入...")
-        self.display_button = QPushButton("顯示文字", self)
-        self.reverse_button = QPushButton("反轉文字", self)
-        self.clear_button = QPushButton("清除文字", self)
+        self.input_field.setPlaceholderText("Type Here")
+        self.display_button = QPushButton("Show Text", self)
+        self.reverse_button = QPushButton("Reverse Text", self)
+        self.clear_button = QPushButton("Clean Text", self)
 
         # 設定佈局
         layout = QVBoxLayout()
@@ -35,25 +35,25 @@ class MainWindow(QWidget):
     def display_text(self):
         text = self.input_field.text()
         if len(text) >= 10:
-            QMessageBox.warning(self, "警告", "輸入文字太長！")
+            QMessageBox.warning(self, "Warning", "Text Exceeds Limit!")
         elif text.strip():
-            self.label.setText(f"您輸入了：{text}")
+            self.label.setText(f"Text：{text}")
         else:
-            QMessageBox.warning(self, "警告", "輸入欄位為空！")
+            QMessageBox.warning(self, "Warning", "Text Cannot Be Empty!")
 
     def clear_text(self):
         self.input_field.clear()
-        self.label.setText("請輸入文字並點擊按鈕：")
+        self.label.setText("Type Text:")
 
     def reverse_text(self):
         text = self.input_field.text()
         if len(text) >= 10:
-            QMessageBox.warning(self, "警告", "輸入文字太長！")
+            QMessageBox.warning(self, "Warning", "Text Exceeds Limit!")
         elif text.strip():
             reversed_text = text[::-1]
-            self.label.setText(f"反轉結果：{reversed_text}")
+            self.label.setText(f"Result：{reversed_text}")
         else:
-            QMessageBox.warning(self, "警告", "輸入欄位為空！")
+            QMessageBox.warning(self, "Warning", "Text Cannot Be Empty!")
 
 # 主程式入口
 if __name__ == "__main__":
