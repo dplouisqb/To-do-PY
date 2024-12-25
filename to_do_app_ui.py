@@ -9,10 +9,15 @@ class ToDoApp(QWidget):
         uic.loadUi('todo_app.ui', self)
 
         # 連接功能
+##代辦清單
         self.addButton.clicked.connect(self.add_task)
         self.deleteButton.clicked.connect(self.delete_task)
         self.markCompleteButton.clicked.connect(self.mark_complete)
 
+##購物清單
+        self.grocButton.clicked.connect(self.add_groc)
+
+##代辦清單
     def add_task(self):
         task = self.taskInput.text()
         if task.strip():
@@ -20,7 +25,7 @@ class ToDoApp(QWidget):
             self.taskInput.clear()
         else:
             QMessageBox.warning(self, "Error", "Task cannot be empty")
-
+    
     def delete_task(self):
     # 取得當前選中的 taskList 或 completedList 中的項目
         selected_task = self.taskList.currentItem()
@@ -52,7 +57,6 @@ class ToDoApp(QWidget):
             self.taskList.takeItem(self.taskList.row(selected_task))
             self.taskList.clearSelection()  # 取消選取 taskList 中的項目
 
-
     def mark_complete(self):
         selected_task = self.taskList.currentItem()
         if selected_task and selected_task.isSelected():
@@ -61,7 +65,19 @@ class ToDoApp(QWidget):
             self.taskList.takeItem(self.taskList.row(selected_task))  # 從待辦清單中移除
             self.taskList.clearSelection()  # 取消選取 taskList 中的項目
         else:
-            QMessageBox.warning(self, "Error", "No task selected")
+          QMessageBox.warning(self, "Error", "No task selected")
+
+##購物清單
+
+    def add_groc(self):
+        task = self.grocInput.text()
+        if task.strip():
+            self.grocList.addItem(task  )
+            self.grocInput.clear()
+        else:
+            QMessageBox.warning(self, "Error", "Groceries cannot be empty")
+    
+
 
 # 主程式
 if __name__ == '__main__':
