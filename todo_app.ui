@@ -175,7 +175,9 @@ QPushButton:hover{
         <string/>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(216, 216, 216); color: black; font-weight: bold; border-radius: 5px; padding: 5px; 
+        <string notr="true">QListWidget {
+background-color: rgb(216, 216, 216);  color: black;  font-weight: bold; border-radius: 5px; padding: 5px;
+}
 </string>
        </property>
        <property name="verticalScrollBarPolicy">
@@ -434,7 +436,7 @@ QPushButton:hover{
 </string>
         </property>
         <property name="selectionMode">
-         <enum>QAbstractItemView::MultiSelection</enum>
+         <enum>QAbstractItemView::SingleSelection</enum>
         </property>
         <property name="sortingEnabled">
          <bool>false</bool>
