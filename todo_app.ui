@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>501</width>
-    <height>574</height>
+    <height>583</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,20 +22,20 @@
      <x>0</x>
      <y>0</y>
      <width>501</width>
-     <height>581</height>
+     <height>582</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QTabWidget:pane {
-  border: 1px solid lightgray;
+  border: 1px solid lightgray; 
   top:-1px; 
   background: black;
   padding: 5px;
 } 
 
 QTabBar:tab {
-  background: rgb(62, 62, 62); 
   border: 1px solid lightgray; 
+  background: rgb(62, 62, 62); 
   padding: 15px;
   color: white;
   border-top-left-radius: 10px;
@@ -50,72 +50,72 @@ QTabBar::tab:selected {
 }</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_5">
     <attribute name="title">
      <string>ToDo</string>
     </attribute>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <layout class="QGridLayout" name="gridLayout_2">
+      <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
-        <layout class="QGridLayout" name="gridLayout_3">
-         <item row="0" column="0">
-          <widget class="QLineEdit" name="taskInput">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="focusPolicy">
-            <enum>Qt::StrongFocus</enum>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: white; color: black; font-weight: bold; border-radius: 5px; padding: 5px;</string>
-           </property>
-           <property name="placeholderText">
-            <string>Enter a new task...</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QPushButton" name="addButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>41</width>
-             <height>22</height>
-            </size>
-           </property>
-           <property name="focusPolicy">
-            <enum>Qt::StrongFocus</enum>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
+        <widget class="QLineEdit" name="taskInput">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white; color: black; font-weight: bold; border-radius: 5px; padding: 5px;</string>
+         </property>
+         <property name="placeholderText">
+          <string>YYYY-MM-DD/Enter a task...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="addButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>41</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
 	background-color: rgb(0, 170, 0); color: white; font-weight: bold; border-radius: 5px; padding: 5px; 
 }
 QPushButton:hover{
 	background-color: rgb(0, 85, 0);color: white; font-weight: bold; border-radius: 5px; padding: 5px; 
 }</string>
-           </property>
-           <property name="text">
-            <string> Add </string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+         </property>
+         <property name="text">
+          <string> Add </string>
+         </property>
+        </widget>
        </item>
-       <item row="1" column="0">
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
         <widget class="QLabel" name="label">
          <property name="styleSheet">
           <string notr="true">color: white; font-weight: bold; border-radius: 5px; padding: 5px;</string>
@@ -125,54 +125,91 @@ QPushButton:hover{
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="QListWidget" name="taskList">
-         <property name="cursor" stdset="0">
-          <cursorShape>ArrowCursor</cursorShape>
+       <item>
+        <widget class="QPushButton" name="sortButton_task">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
-         <property name="mouseTracking">
-          <bool>false</bool>
+         <property name="minimumSize">
+          <size>
+           <width>41</width>
+           <height>22</height>
+          </size>
          </property>
          <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="contextMenuPolicy">
-          <enum>Qt::ActionsContextMenu</enum>
-         </property>
-         <property name="toolTip">
-          <string/>
+          <enum>Qt::StrongFocus</enum>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(216, 216, 216); color: black; font-weight: bold; border-radius: 5px; padding: 5px; 
-</string>
+          <string notr="true">QPushButton{
+	background-color: rgb(0, 0, 0); color: white; font-weight: bold; border-radius: 5px;  padding: 5px;   border: 1px solid lightgray; 
+}
+QPushButton:hover{
+	background-color: rgb(80, 80, 80);color: white; font-weight: bold; border-radius: 5px; padding: 5px; 
+}</string>
          </property>
-         <property name="verticalScrollBarPolicy">
-          <enum>Qt::ScrollBarAsNeeded</enum>
-         </property>
-         <property name="dragEnabled">
-          <bool>false</bool>
-         </property>
-         <property name="dragDropOverwriteMode">
-          <bool>false</bool>
-         </property>
-         <property name="dragDropMode">
-          <enum>QAbstractItemView::NoDragDrop</enum>
-         </property>
-         <property name="defaultDropAction">
-          <enum>Qt::CopyAction</enum>
-         </property>
-         <property name="selectionMode">
-          <enum>QAbstractItemView::SingleSelection</enum>
-         </property>
-         <property name="horizontalScrollMode">
-          <enum>QAbstractItemView::ScrollPerPixel</enum>
-         </property>
-         <property name="viewMode">
-          <enum>QListView::ListMode</enum>
+         <property name="text">
+          <string>Sort</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
+      </layout>
+     </item>
+     <item>
+      <widget class="QListWidget" name="taskList">
+       <property name="cursor" stdset="0">
+        <cursorShape>ArrowCursor</cursorShape>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::ActionsContextMenu</enum>
+       </property>
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(216, 216, 216); color: black; font-weight: bold; border-radius: 5px; padding: 5px; 
+</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAsNeeded</enum>
+       </property>
+       <property name="dragEnabled">
+        <bool>false</bool>
+       </property>
+       <property name="dragDropOverwriteMode">
+        <bool>false</bool>
+       </property>
+       <property name="dragDropMode">
+        <enum>QAbstractItemView::NoDragDrop</enum>
+       </property>
+       <property name="defaultDropAction">
+        <enum>Qt::CopyAction</enum>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="horizontalScrollMode">
+        <enum>QAbstractItemView::ScrollPerPixel</enum>
+       </property>
+       <property name="viewMode">
+        <enum>QListView::ListMode</enum>
+       </property>
+       <property name="sortingEnabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
         <widget class="QLabel" name="label_3">
          <property name="styleSheet">
           <string notr="true">color: white; font-weight: bold; border-radius: 5px; padding: 5px;</string>
@@ -182,62 +219,95 @@ QPushButton:hover{
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QListWidget" name="completedList">
-         <property name="mouseTracking">
-          <bool>false</bool>
+       <item>
+        <widget class="QPushButton" name="sortButton_comp">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>41</width>
+           <height>22</height>
+          </size>
          </property>
          <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
+          <enum>Qt::StrongFocus</enum>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(216, 216, 216); color: black; font-weight: bold; border-radius: 5px; padding: 5px; 
-</string>
+          <string notr="true">QPushButton{
+	background-color: rgb(0, 0, 0); color: white; font-weight: bold; border-radius: 5px; padding: 5px;   border: 1px solid lightgray; 
+}
+QPushButton:hover{
+	background-color: rgb(80, 80, 80);color: white; font-weight: bold; border-radius: 5px; padding: 5px; 
+}</string>
          </property>
-         <property name="defaultDropAction">
-          <enum>Qt::CopyAction</enum>
-         </property>
-         <property name="selectionMode">
-          <enum>QAbstractItemView::SingleSelection</enum>
+         <property name="text">
+          <string>Sort</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QPushButton" name="markCompleteButton">
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
+      </layout>
+     </item>
+     <item>
+      <widget class="QListWidget" name="completedList">
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(216, 216, 216); color: black; font-weight: bold; border-radius: 5px; padding: 5px; 
+</string>
+       </property>
+       <property name="defaultDropAction">
+        <enum>Qt::CopyAction</enum>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="sortingEnabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="markCompleteButton">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
 	background-color: rgb(0, 170, 0); color: white; font-weight: bold; border-radius: 5px; padding: 5px; 
 }
 QPushButton:hover{
 	background-color: rgb(0, 85, 0);color: white; font-weight: bold; border-radius: 5px; padding: 5px; 
 }</string>
-           </property>
-           <property name="text">
-            <string>Complete</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="deleteButton">
-           <property name="autoFillBackground">
-            <bool>false</bool>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
+         </property>
+         <property name="text">
+          <string>Complete</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="deleteButton">
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
 	background-color:rgb(255, 0, 0); color: white; font-weight: bold; border-radius: 5px; padding: 5px; 
 }
 QPushButton:hover{
 	background-color: rgb(170, 0, 0);color: white; font-weight: bold; border-radius: 5px; padding: 5px; 
 }</string>
-           </property>
-           <property name="text">
-            <string>Delete</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+         </property>
+         <property name="text">
+          <string>Delete</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -247,87 +317,162 @@ QPushButton:hover{
     <attribute name="title">
      <string>ToBuy</string>
     </attribute>
-    <layout class="QHBoxLayout" name="horizontalLayout_5">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <widget class="QLineEdit" name="grocInput">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="focusPolicy">
-            <enum>Qt::StrongFocus</enum>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: white; color: black; font-weight: bold; border-radius: 5px; padding: 5px;</string>
-           </property>
-           <property name="placeholderText">
-            <string>Enter a new task...</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="grocButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>41</width>
-             <height>22</height>
-            </size>
-           </property>
-           <property name="focusPolicy">
-            <enum>Qt::StrongFocus</enum>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>471</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLineEdit" name="grocInput">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white; color: black; font-weight: bold; border-radius: 5px; padding: 5px;</string>
+          </property>
+          <property name="placeholderText">
+           <string>Enter a groceries...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="grocButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>41</width>
+            <height>22</height>
+           </size>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
 	background-color: rgb(0, 170, 0); color: white; font-weight: bold; border-radius: 5px; padding: 5px; 
 }
 QPushButton:hover{
 	background-color: rgb(0, 85, 0);color: white; font-weight: bold; border-radius: 5px; padding: 5px; 
 }</string>
-           </property>
-           <property name="text">
-            <string> Add </string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_2">
-         <property name="styleSheet">
-          <string notr="true">color: white; font-weight: bold; border-radius: 5px; padding: 5px;</string>
-         </property>
-         <property name="text">
-          <string>Groceries</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QListWidget" name="grocList">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(216, 216, 216); color: black; font-weight: bold; border-radius: 5px; padding: 5px; 
+          </property>
+          <property name="text">
+           <string> Add </string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="styleSheet">
+           <string notr="true">color: white; font-weight: bold; border-radius: 5px; padding: 5px;</string>
+          </property>
+          <property name="text">
+           <string>Groceries</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="sortButton_groc">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>41</width>
+            <height>22</height>
+           </size>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: rgb(0, 0, 0); color: white; font-weight: bold; border-radius: 5px; padding: 5px;   border: 1px solid lightgray; 
+}
+QPushButton:hover{
+	background-color: rgb(80, 80, 80);color: white; font-weight: bold; border-radius: 5px; padding: 5px; 
+}</string>
+          </property>
+          <property name="text">
+           <string>Sort</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="0">
+       <widget class="QListWidget" name="grocList">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(216, 216, 216); color: black; font-weight: bold; border-radius: 5px; padding: 5px; 
 </string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::MultiSelection</enum>
+        </property>
+        <property name="sortingEnabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="deleteGrocButton">
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color:rgb(255, 0, 0); color: white; font-weight: bold; border-radius: 5px; padding: 5px; 
+}
+QPushButton:hover{
+	background-color: rgb(170, 0, 0);color: white; font-weight: bold; border-radius: 5px; padding: 5px; 
+}</string>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>2</width>
+     <height>2</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_5"/>
   </widget>
  </widget>
  <resources/>
