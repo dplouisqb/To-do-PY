@@ -28,8 +28,9 @@ class ToDoApp(QWidget):
         self.sortButton_comp.clicked.connect(self.toggle_sorting_comp)
         self.sortButton_groc.clicked.connect(self.toggle_sorting_groc)
 
-        ## 預設任務
+        ## 預設
         self.add_default_tasks()
+        self.add_default_groceries()
 
         ## 排序模式標誌
         self.sort_mode_task = 0  # 0: 按名稱排序, 1: 按日期排序, 2: 按星星排序
@@ -112,6 +113,20 @@ class ToDoApp(QWidget):
             item.setIcon(QIcon(icon))  # 設置圖標
             item.setData(Qt.ItemDataRole.UserRole, "empty" if icon == "star_empty.png" else "filled")  # 設置任務狀態
             self.taskList.addItem(item)
+
+    ## 預設購物清單
+    def add_default_groceries(self):
+        # 假設預設有三個購物清單項目
+        default_groceries = [
+            "Milk",
+            "Eggs",
+            "Bread"
+        ]
+
+        for item_text in default_groceries:
+            item = QListWidgetItem(item_text)
+            item.setCheckState(Qt.CheckState.Unchecked)  # 預設為未勾選
+            self.grocList.addItem(item)
 
     ## 雙擊項目來切換圖標
     def toggle_task_icon(self, item):
